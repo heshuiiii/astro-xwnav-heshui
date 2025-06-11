@@ -2,9 +2,9 @@
 
 ## 📖 项目简介
 
-- Zywe导航站主题**人人都能用的简洁美观收藏夹网站**。不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注于内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化了维护工作**
+- Zywe导航站主题**人人都能用的简洁美观收藏夹网站**。不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注于内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化了维护工作**,支持Vercel和Cloudflare Pages一键部署
 
-- 🧭演示站点：[dh.zywe.de](https://dh.zywe.de/)
+### 🧭演示站点：[dh.zywe.de](https://dh.zywe.de/)
 
 
 ## 🌈 主要特点
@@ -34,9 +34,9 @@
 
 ## 🌟 独特优势
 
-自动化功能，让您只需专注于内容管理而非技术细节,只需修改一个数据文件（`src/data/navLinks.js`），所有功能都会自动更新，极大简化了维护工作
+- 🤖 自动化功能，让您只需专注于内容管理而非技术细节,只需修改一个数据文件（`src/data/navLinks.js`），所有功能都会自动更新，极大简化了维护工作
 
-### 🤖 自动化功能
+### 自动化功能
 
 - **🖼️ 自动图标获取**：添加新网站和新分类时无需手动下载图标，脚本自动获取并优化图标引用图标一条龙
 - **📑 自动分类导航**：侧边栏分类导航会根据数据文件自动更新，无需手动修改HTML
@@ -49,8 +49,7 @@
 - **📝 自动SEO元数据**：每次构建项目自动生成和管理SEO相关的元标签等等代码
 
 ## 🟢灯塔[PageSpeed Insights](https://pagespeed.web.dev/)
-
-
+![4ceed547f12b6e7753b8f776090abed3.png](https://i.miji.bid/2025/06/11/4ceed547f12b6e7753b8f776090abed3.png)
 
 ## 🎶 部署指南(网上教程关键词:astro教学,安装nodejs,nginx反代网站)
 ### **推荐：本地Windows开发 + Linux服务器部署**
@@ -58,20 +57,20 @@
    - 仅将执行构建命令后的dist目录部署到服务器
 ### 💻 开始环境配置
 
-### git 拉取
+### ✅ git 拉取
 - `git clone https://github.com/zywe03/astro-nav-theme.git`(或者下载压缩包源码解压)
 
-### windowns安装Node.js 环境
+### ✅ windowns安装Node.js 环境
 - 安装 **Node.js 18.0+** (推荐LTS版本)[官网](https://nodejs.org/zh-cn)
 - Windows用户：直接从官网下载安装包
 
-### 包管理器选择
+### ✅ 包管理器选择
 - **启用 pnpm**（轻量、高效）
   ```bash
   corepack enable
   corepack prepare pnpm@latest --activate
   ```
-### 开始开发
+### ✅ 开始开发
 ```
 # 安装依赖
 pnpm i
@@ -82,12 +81,12 @@ npx tsx .\icon-system\0icon.ts
 # 打包构建生成/dist目录
 pnpm build
 ```
-### 上传/dist目录到服务器,nginx反代,完结撒花🥳
+### ✅ 上传/dist目录到服务器,nginx反代,完结撒花🥳
 
-### Vercel自动部署
-
-### Cloudflare 页面自动部署
-
+### ✅ Vercel自动部署
+[![zywe vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/zywe03/astro-xwnav-theme)
+### ✅ Cloudflare Pages自动部署
+[![zywe cloudflare](https://deploy.workers.cloudflare.com/button)](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages-project&repos=https://github.com/zywe03/astro-xwnav-theme)
 
 ## 🎥 项目核心结构
 
@@ -95,8 +94,8 @@ pnpm build
 dh_web/
 ├── icon-system/       # 图标管理系统
 ├── public/            # 静态资源目录
-│   ├── icons/         # 网站和分类图标目录
-│   └── images/        # 网站logo和分享页图标和默认图标
+│   ├── icons/         # 导航网站和分类图标目录
+│   └── images/        # 网站图标
 ├── src/               # 源代码目录
 │   ├── components/    # 组件目录
 │   │   ├── Card.astro     # 网站卡片组件
@@ -137,7 +136,7 @@ dh_web/
 
 修改 `src/data/navLinks.js` 文件即可管理所有网站和分类
 
-- 建议统一用一种格式**JavaScript风格格式+单引号**,避免脚本错误识别
+- ✅建议统一用一种格式**JavaScript风格格式+单引号**,避免脚本错误识别
 
 ### 添加新分类
 
@@ -208,10 +207,8 @@ baidu.com
 ---
 ## 🖼️ 图标下载脚本使用指南
 
-`navLinks.js`使用“JavaScript风格格式+单引号”，不要添加"icon字段"
+✅ `navLinks.js`使用“JavaScript风格格式+单引号”，不要添加"icon字段"
 由于是静态网站，建议全部图标在构建时下载图标引用
-
-## 💻 图标系统使用指南
 
 ### 使用步骤：
 
@@ -224,7 +221,7 @@ npx tsx .\icon-system\0icon.ts
 
 ## 🔗 修改友情链接和按钮
 
-## 使用vscode搜索文本`记得修改`可快速找到全部需要自定义的内容(强烈建议搜索)
+## ✅使用vscode搜索文本`记得修改`可快速找到全部需要自定义的内容(强烈建议搜索)
 
 ### 修改友情链接和页脚声明
 
@@ -244,7 +241,7 @@ npx tsx .\icon-system\0icon.ts
 2. 替换图标文件放入 `public\images` 目录即可
 
 ### 提交站点地图
-只需要向搜索引擎提交 https://xxx.com/sitemap-index.xml 这一个文件
+只需要向搜索引擎提交 `https://xxx.com/sitemap-index.xml` 这一个文件
 
 ---
 ```

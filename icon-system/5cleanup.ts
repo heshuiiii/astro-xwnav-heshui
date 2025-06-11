@@ -16,7 +16,7 @@ import {
   formatFileSize
 } from './tools.js';
 const IMAGE_EXTENSIONS = ['webp', 'svg', 'ico', 'png', 'jpg', 'jpeg', 'gif'];
-const MAX_ICON_SIZE = 1024 * 1024;
+const MAX_ICON_SIZE = 2048 * 2048;
 const FORMAT_PRIORITY = ['webp', 'svg', 'png', 'jpg', 'jpeg', 'ico', 'gif'];
 interface IconReference {
   path: string;           

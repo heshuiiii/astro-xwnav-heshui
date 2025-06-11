@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "astro": "astro",
-    "build": "astro build",
+    "build": "npx tsx ./icon-system/0icon.ts && astro build",
     "dev": "astro dev",
     "preview": "astro preview",
     "sync": "astro sync"
