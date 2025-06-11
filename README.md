@@ -1,11 +1,11 @@
-# 🚀 Zywe导航站主题-不用折腾的个人收藏夹网站,只需专注于内容管理,简化维护工作,提高效率
+## 🛏️ Zywe导航站项目-适合"养老"的个人收藏夹网站,只需专注于内容管理,简化维护工作,提高效率
 
 ## 📖 项目简介
 
-- Zywe导航站主题**人人都能用的简洁美观收藏夹网站**。不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注于内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化了维护工作**,支持Vercel和Cloudflare Pages一键部署
+- Zywe导航站主题**人人都能用的简洁美观收藏夹网站**。不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注于内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化了维护工作**,支持 Vercel 和 Cloudflare Pages 一键部署
 
 ### 🧭演示站点：[dh.zywe.de](https://dh.zywe.de/)
-
+![835f57b512df219adae8a13c97e69cd4.png](https://i.miji.bid/2025/06/12/835f57b512df219adae8a13c97e69cd4.png)
 
 ## 🌈 主要特点
 
@@ -85,8 +85,8 @@ pnpm build
 
 ### ✅ Vercel自动部署
 [![zywe vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/zywe03/astro-xwnav-theme)
-### ✅ Cloudflare Pages自动部署
-[![zywe cloudflare](https://deploy.workers.cloudflare.com/button)](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages-project&repos=https://github.com/zywe03/astro-xwnav-theme)
+### ✅ Cloudflare Workers自动部署
+[![zywe Cloudflare pages](https://deploy.workers.cloudflare.com/button)](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/deploy-to-workers&repository=https://github.com/zywe03/astro-xwnav-theme)
 
 ## 🎥 项目核心结构
 
