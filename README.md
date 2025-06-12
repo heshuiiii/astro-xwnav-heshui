@@ -88,6 +88,32 @@ pnpm build
 ### 🟢 Cloudflare Workers自动部署
 [![zywe Cloudflare pages](https://deploy.workers.cloudflare.com/button)](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/deploy-to-workers&repository=https://github.com/zywe03/astro-xwnav-theme)
 
+### 🛜 第一次导入大量网址链接,借助AI快速生成网站导航内容(强烈建议)
+
+**列出想要生成的网站所属分类,名称或网站**,短和长描述让AI生成，节省工作量
+
+AI提示词:
+```
+统一分类opensource
+网站：
+github
+baidu.com
+谷歌
+具体按照以下样式生成，使用“JavaScript风格格式+单引号”，不要添加"icon字段"和"[]""      
+      {
+      id: 'github',
+      title: 'GitHub', 
+      description: '全球最大的开源代码托管平台，支持 Git 版本控制，适用于协作开发、项目管理和自动化工作流，是开发者共享与协作的核心工具。'
+      shortDesc: '代码托管平台。',
+      url: 'https://github.com/',
+      category: 'opensource',
+      },
+
+描述根据网站实际内容,专业,准确,介绍背景独特优势等等,不要太刻板,臃肿,重复
+```
+插入数据文件后
+执行`npx tsx .\icon-system\0icon.ts`自动下载图标,即可完成,大量导航网站导入
+
 ## 🎥 项目核心结构
 
 ```
@@ -177,30 +203,6 @@ export const sites = [
 - 一句话调顺序即可
 - **分类排序**: 调整 `categories` 数组中分类的顺序即可改变分类的显示顺序
 - **网站排序**: 调整 `sites` 数组中网站的顺序即可改变网站的显示顺序
-  
-### 🛜 借助AI快速生成网站导航内容(强烈建议)
-
-**列出想要生成的网站所属分类,名称或网站**,短和长描述让AI生成，节省工作量
-
-AI提示词:
-```
-统一分类opensource
-网站：
-github
-baidu.com
-谷歌
-具体按照以下样式生成，使用“JavaScript风格格式+单引号”，不要添加"icon字段"和"[]""      
-      {
-      id: 'github',
-      title: 'GitHub', 
-      description: '全球最大的开源代码托管平台，支持 Git 版本控制，适用于协作开发、项目管理和自动化工作流，是开发者共享与协作的核心工具。'
-      shortDesc: '代码托管平台。',
-      url: 'https://github.com/',
-      category: 'opensource',
-      },
-
-描述根据网站实际内容,专业,准确,介绍背景独特优势等等,不要太刻板,臃肿,重复
-```
 
 ### 生成后插入navLinks.js即可
 
