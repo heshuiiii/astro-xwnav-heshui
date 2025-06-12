@@ -1,8 +1,8 @@
-## 🛏️ Zywe导航站项目-适合"养老"的个人收藏夹网站,只需专注于内容管理,简化维护工作,提高效率
+## 🛏️ Zywe导航站主题-适合"养老"的个人收藏夹网站,只需专注于内容管理,简化维护工作,提高效率
 
 ## 📖 项目简介
 
-- Zywe导航站主题**人人都能用的简洁美观收藏夹网站**。不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注于内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化了维护工作**,支持 Vercel 和 Cloudflare Pages 一键部署
+- xwnav-theme:**人人都能用的简洁美观收藏夹网站**。不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注于内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化了维护工作**,支持 Vercel 和 Cloudflare Pages 一键部署
 
 ### 🧭演示站点：[dh.zywe.de](https://dh.zywe.de/)
 ![835f57b512df219adae8a13c97e69cd4.png](https://i.miji.bid/2025/06/12/835f57b512df219adae8a13c97e69cd4.png)
@@ -51,11 +51,11 @@
 ## 🟢灯塔[PageSpeed Insights](https://pagespeed.web.dev/)
 ![4ceed547f12b6e7753b8f776090abed3.png](https://i.miji.bid/2025/06/11/4ceed547f12b6e7753b8f776090abed3.png)
 
-## 🎶 部署指南(网上教程关键词:astro教学,安装nodejs,nginx反代网站)
+## 🎶 部署指南`总共五步 (教程关键词:astro教学,安装nodejs,使用nginx)
+
 ### **推荐：本地Windows开发 + Linux服务器部署**
    - 本地开发和构建
    - 仅将执行构建命令后的dist目录部署到服务器
-### 💻 开始环境配置
 
 ### ✅ git 拉取
 - `git clone https://github.com/zywe03/astro-nav-theme.git`(或者下载压缩包源码解压)
@@ -246,14 +246,6 @@ npx tsx .\icon-system\0icon.ts
 ---
 ```
 感谢项目使用的全部API
-myip.la
-openweathermap.org
-Feather
-Simple
-Iconify
-DuckDuckGo
-Unavatar
-Clearbit
-Logo
+Feather,Simple,Iconify,DuckDuckGo,Unavatar,myip.la,openweathermap.org,Clearbit,Logo
 ```
 🌟 **Zywe导航站** - 让您的网络世界更有序、更高效！
