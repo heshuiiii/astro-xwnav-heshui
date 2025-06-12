@@ -83,9 +83,9 @@ pnpm build
 ```
 ### ✅ 上传/dist目录到服务器,nginx反代,完结撒花🥳
 
-### ✅ Vercel自动部署
+### 🟢 Vercel自动部署
 [![zywe vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/zywe03/astro-xwnav-theme)
-### ✅ Cloudflare Workers自动部署
+### 🟢 Cloudflare Workers自动部署
 [![zywe Cloudflare pages](https://deploy.workers.cloudflare.com/button)](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/deploy-to-workers&repository=https://github.com/zywe03/astro-xwnav-theme)
 
 ## 🎥 项目核心结构
@@ -249,3 +249,4 @@ npx tsx .\icon-system\0icon.ts
 Feather,Simple,Iconify,DuckDuckGo,Unavatar,myip.la,openweathermap.org,Clearbit,Logo
 ```
 🌟 **Zywe导航站** - 让您的网络世界更有序、更高效！
+意见与反馈可使用📧 联系我：[电子邮箱](mailto:zywe03@qq.com)
