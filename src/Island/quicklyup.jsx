@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 const SCROLL_THRESHOLD = 400;      
-const AUTO_HIDE_DURATION = 2000;   
+const AUTO_HIDE_DURATION = 3000;   
 const SCROLL_STOP_DELAY = 500;     
 const QuicklyUpButton = () => {
   const [isVisible, setIsVisible] = useState(false); 
