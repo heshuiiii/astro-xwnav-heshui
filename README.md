@@ -51,11 +51,7 @@
 ## 🟢灯塔[PageSpeed Insights](https://pagespeed.web.dev/)
 ![4ceed547f12b6e7753b8f776090abed3.png](https://i.miji.bid/2025/06/11/4ceed547f12b6e7753b8f776090abed3.png)
 
-## 🎶 部署指南`总共六步 (关键词:拉取➡️安装环境➡️自定义网站➡️导入数据文件➡️执行脚本➡️部署)
-
-### **推荐：本地Windows开发 + Linux服务器部署**
-   - 本地开发和构建
-   - 仅将执行构建命令后的dist目录部署到服务器
+## 🎶 部署指南`总共六步 (拉取➡️安装环境➡️自定义网站➡️导入数据文件➡️执行脚本➡️部署)
 
 ### ✅ git 拉取
 - `git clone https://github.com/zywe03/astro-nav-theme.git`(或者下载压缩包源码解压)
@@ -180,7 +176,9 @@ dh_web/
 
 在 `categories` 数组中添加新分类：
 
-⚠️ 注意：不要手动添加icon字段，不要icon""字段留空,都会导致图标无法自动下载添加icon字段,**手动自定义图标除外**
+⚠️ 注意：不要手动添加icon字段，不要icon""字段留空,会导致无法自动下载添加icon字段,**手动自定义图标除外**
+
+  最好直接不写icon省心,简单
 
 ```javascript
 export const categories = [
@@ -201,8 +199,8 @@ export const sites = [
       {
       id: 'github',                           // 网站ID
       title: 'GitHub',                       // 网站名称
-      description: '全球最大代码托管平台。', // 网站描述
-      shortDesc: '代码托管平台。',      // 简短描述
+      description: '全球最大代码托管平台。', // 长描述
+      shortDesc: '代码托管平台。',      // 短描述
       url: 'https://github.com/',     // 网站链接（包含完整协议（`http://`或`https://`））
       category: 'opensource',        // 所属分类 ID（必须对应分类中的id）
         // 注意：不需要添加icon字段，脚本会自动处理
@@ -211,7 +209,7 @@ export const sites = [
 ```
 
 #### 网站和分类排序
-- 一句话调顺序即可
+- 一句话就是调顺序即可排序
 - **分类排序**: 调整 `categories` 数组中分类的顺序即可改变分类的显示顺序
 - **网站排序**: 调整 `sites` 数组中网站的顺序即可改变网站的显示顺序
 
