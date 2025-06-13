@@ -114,6 +114,18 @@ baidu.com
 插入数据文件`navLinks.js`后
 执行`npx tsx .\icon-system\0icon.ts`自动下载图标,即可完成,大量导航网站导入
 
+## 如何优雅上传服务器
+
+1. 使用Cloudflare Pages或Vercel作为服务器
+
+ vscode更新数据文件，执行图标下载脚本，同步更新到仓库即可
+
+2. 使用vps作为服务器
+
+ 2.1:使用`rsync`，配置一键脚本上传
+
+ 2.2:更新，执行，构建，设置好nginx，压缩dist，上传解压，更新就删服务器的dist，再传新的压缩包
+
 ## 🎥 项目核心结构
 
 ```
@@ -172,11 +184,10 @@ dh_web/
 
 ```javascript
 export const categories = [
-  // 分类注释
   {
     id: new,  //分类ID
     name: '新分类名称',icon: '/icons/category/new-category.svg'
-    // 分类图标也支持自动生成,基于name的首字生成
+    // 分类图标也支持自动生成,基于模糊搜索分类名字和ID,找到合适的图标
   }
 ];
 ```
