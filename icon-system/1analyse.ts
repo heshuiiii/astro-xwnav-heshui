@@ -20,9 +20,6 @@ export interface AnalysisResult {
   categoryTasks: IconTask[];
 }
 /**
- * 从对象块中提取属性值，支持多种格式：
- * 1. JSON格式 "propName": "propValue"
- * 2. JavaScript格式 propName: 'propValue' 或 propName: "propValue"
  * @param {string} objectBlock - 包含属性的对象块字符串
  * @param {string} propName - 要提取的属性名
  * @returns {string|null} - 提取的属性值，如果不存在则返回null
@@ -111,10 +108,16 @@ async function analyzeCategoriesInContent(content: string): Promise<IconTask[]> 
  */
 async function analyzeSitesInContent(content: string): Promise<IconTask[]> {
   const tasks: IconTask[] = [];
+  const sitesArrayMatch = content.match(/export\s+const\s+sites\s*=\s*\[([\s\S]*?)\];/);
+  if (!sitesArrayMatch) {
+    logWarning('未找到 sites 数组');
+    return tasks;
+  }
+  const sitesContent = sitesArrayMatch[1];
   const objectBlockRegex = /\{[\s\S]*?\}(?:,|\s*\n)/g;
   const objectBlocks: string[] = [];
   let blockMatch;
-  while ((blockMatch = objectBlockRegex.exec(content)) !== null) {
+  while ((blockMatch = objectBlockRegex.exec(sitesContent)) !== null) {
     objectBlocks.push(blockMatch[0]);
   }
   let sitesWithIcon = 0;

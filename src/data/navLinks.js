@@ -12,9 +12,9 @@ baidu.com
       shortDesc: '代码托管平台。',
       url: 'https://github.com/',
       category: 'opensource',
-      icon: '/icons/github.webp',
       },
 描述根据网站实际内容,专业,准确,介绍背景独特优势等等,不要太刻板,臃肿,重复
+下载脚本
 npx tsx icon-system/0icon.ts
 */
 /**
@@ -40,15 +40,15 @@ export const categories = [
  * @type {Array<{id: string, title: string, description: string, shortDesc: string, url: string, icon: string, category: string}>}
  */
 export const sites = [
-  //开源
+  //开源      
   {
-    id: 'github',
-    title: 'GitHub',
-    description: '全球最大的开源代码托管平台，支持 Git 版本控制，适用于协作开发、项目管理和自动化工作流，是开发者共享与协作的核心工具。',
-    shortDesc: '全球最大代码托管平台。',
-    url: 'https://github.com/',
-    icon: '/icons/github.webp',
-    category: 'opensource'
+  id: 'github',
+  title: 'GitHub',
+  description: '全球最大的开源代码托管平台，支持 Git 版本控制，适用于协作开发、项目管理和自动化工作流，是开发者共享与协作的核心工具。',
+  shortDesc: '全球最大代码托管平台。',
+  url: 'https://github.com/',
+  category: 'opensource',
+  icon: '/icons/github.webp',
   },
   {
     id: 'docker-hub',
