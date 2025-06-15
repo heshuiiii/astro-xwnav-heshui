@@ -14,7 +14,7 @@ baidu.com
       category: 'opensource',
       },
 描述根据网站实际内容,专业,准确,介绍背景独特优势等等,不要太刻板,臃肿,重复
-下载脚本
+自动下载图标脚本执行:
 npx tsx icon-system/0icon.ts
 */
 /**
@@ -31,8 +31,8 @@ export const categories = [
     name: '个人其他站点', icon: '/icons/category/studying.svg',
   },
   {
-    id: 'ipleak',
-    name: '网络安全', icon: '/icons/category/ipleak.svg', 
+    id: 'pages',
+    name: '静态部署平台', icon: '/icons/category/pages.svg',
   },
 ];
 /**
@@ -41,24 +41,15 @@ export const categories = [
  */
 export const sites = [
   //开源      
-  {
-  id: 'github',
-  title: 'GitHub',
-  description: '全球最大的开源代码托管平台，支持 Git 版本控制，适用于协作开发、项目管理和自动化工作流，是开发者共享与协作的核心工具。',
-  shortDesc: '全球最大代码托管平台。',
-  url: 'https://github.com/',
-  category: 'opensource',
-  icon: '/icons/github.webp',
-  },
-  {
-    id: 'docker-hub',
-    title: 'Docker Hub',
-    description: '官方容器镜像仓库，提供镜像上传、分发与管理，支持快速部署各类 Docker 应用，是容器生态的基础服务平台。',
-    shortDesc: 'Docker容器镜像仓库。',
-    url: 'https://hub.docker.com/',
-    icon: '/icons/docker-hub.webp',
-    category: 'opensource'
-  },
+      {
+      id: 'github',
+      title: 'GitHub',
+      description: '全球最大的开源代码托管平台，支持 Git 版本控制，适用于协作开发、项目管理和自动化工作流，是开发者共享与协作的核心工具。',
+      shortDesc: '全球最大代码托管平台。',
+      url: 'https://github.com/',
+      category: 'opensource',
+      icon: '/icons/github.webp',
+      },
   //个人其他站点      
       {
       id: 'zywede',
@@ -78,24 +69,33 @@ export const sites = [
       category: 'Studying',
       icon: '/icons/dh-zywede.png',
       },
-      // IP, DNS Leak, WebRTC Leak Check      
+      // pages      
       {
-      id: 'browserleaks',
-      title: 'Browserleaks',
-      description: 'Browserleaks是一个全面的浏览器安全和隐私检测网站，能够详细检测用户的IP地址、DNS服务器、WebRTC信息以及多种浏览器指纹，帮助用户了解哪些个人或设备信息可能在网上泄露，以便采取保护措施。',
-      shortDesc: '全面浏览器和网络隐私检测。',
-      url: 'https://browserleaks.com/',
-      category: 'ipleak',
-      icon: '/icons/browserleaks.webp',
-      },      
+      id: 'github-pages',
+      title: 'GitHub Pages',
+      description: 'GitHub 提供的静态网站托管服务，支持自定义域名与 HTTPS，可直接从仓库部署，适合个人主页、项目文档与开源展示，集成 Git 工作流，极简且可靠。',
+      shortDesc: 'Git 驱动的静态网站托管。',
+      url: 'https://pages.github.com/',
+      category: 'pages',
+      icon: '/icons/github-pages.webp',
+      },
       {
-      id: 'ipcheck',
-      title: 'IPCheck',
-      description: 'IPCheck是一个简单易用的工具，用于快速检查用户的IP地址、正在使用的DNS服务器以及是否存在WebRTC泄露，提供直观的测试结果，方便用户验证其网络连接的匿名性和安全性。',
-      shortDesc: '检查IP、DNS、WebRTC泄露。',
-      url: 'https://ipcheck.ing/',
-      category: 'ipleak',
-      icon: '/icons/ipcheck.webp',
+      id: 'cloudflare-pages',
+      title: 'Cloudflare Pages',
+      description: '由全球领先的 CDN 提供商 Cloudflare 推出的前端部署平台，支持 Jamstack 架构，内置构建优化、边缘函数与自动缓存更新，适合高性能 Web 应用与博客。',
+      shortDesc: 'CDN 优化的前端部署平台。',
+      url: 'https://pages.cloudflare.com/',
+      category: 'pages',
+      icon: '/icons/cloudflare-pages.webp',
+      },
+      {
+      id: 'vercel',
+      title: 'Vercel',
+      description: '专为前端开发打造的现代部署平台，由 Next.js 背后团队开发，支持 Serverless 架构、实时预览与多分支部署，适合敏捷开发、商业级应用与个性化项目。',
+      shortDesc: 'Next.js 团队出品的部署平台。',
+      url: 'https://vercel.com/',
+      category: 'pages',
+      icon: '/icons/vercel.webp',
       },
 ];
 /**
