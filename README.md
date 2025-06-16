@@ -1,8 +1,8 @@
-## 🚀 每个人都能拥有自己的轻量级导航站，零后端、零数据库、极速上线，基于 Astro 构建，支持 Vercel 和 Cloudflare一键部署
+## 🚀 每个人都能拥有自己的轻量级导航站，零后端、零数据库、极速上线，基于 Astro 构建，支持 Vercel 和 Cloudflare一键部署导航网站
 
 ## 📖 项目简介
 
-- Astro-xwnav:是一款零后端、零数据库、纯静态导航站项目，不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化维护工作**适合新手、个人用户或低配和无服务器部署
+- Astro-xwnav:不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化维护工作**,是低配甚至无服务器,个人用户或新手搭建导航站的首选
 
 ### 🧭演示站点：[https://dh.zywe.de](https://dh.zywe.de)
 ![835f57b512df219adae8a13c97e69cd4.png](https://i.miji.bid/2025/06/12/835f57b512df219adae8a13c97e69cd4.png)
@@ -134,7 +134,7 @@ dh_web/
 │   ├── components/    # 组件目录
 │   │   ├── Card.astro     # 网站卡片组件
 │   │   ├── Footer.astro   # 页脚组件
-│   │   ├── Header.astro   # 页眉组件（含导航）
+│   │   ├── Header.astro   # 页眉组件
 │   │   ├── LogoName.astro  # Logo和网站名称组件
 │   │   └── Sidebar.astro   # 侧边栏组件
 │   ├── Island/        # React岛屿组件目录
@@ -178,7 +178,7 @@ dh_web/
 
 ⚠️ 注意：不要手动添加icon字段，不要icon""字段留空,会导致无法自动下载添加icon字段,**手动自定义图标除外**
 
-  最好直接不写icon省心,简单
+   最好直接不写icon省心,简单
 
 ```javascript
 export const categories = [
@@ -256,6 +256,10 @@ npx tsx .\icon-system\0icon.ts
 只需要向搜索引擎提交 `https://xxx.com/sitemap-index.xml` 这一个文件
 
 ---
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=zywe03/astro-xwnav&type=Date)](https://www.star-history.com/#zywe03/astro-xwnav&Date)
+
 ```
 感谢项目使用的全部API
 Feather,Simple,Iconify,DuckDuckGo,Unavatar,myip.la,openweathermap.org,Clearbit,Logo
