@@ -62,10 +62,10 @@ export const sites = [
       },
       {
       id: 'dh_zywede',
-      title: 'dh.zywe.de',
+      title: 'nav.zywe.de',
       description: '专属导航页,这里汇聚了日常学习、开发与管理服务器所需的所有高效工具与资源链接，快速触达各项在线服务的便捷入口，确保学习与实践的流畅性。',
       shortDesc: '让每个人都有自己的网站式收藏夹',
-      url: 'https://dh.zywe.de/',
+      url: 'https://nav.zywe.de/',
       category: 'Studying',
       icon: '/icons/dh-zywede.png',
       },
