@@ -4,7 +4,7 @@
 
 - Astro-xwnav:是一款零后端、零数据库、纯静态导航站项目，不仅仅是简单的链接集合，更是智能化的导航平台，让您只需专注内容管理而非技术细节,**只需编辑一个数据文件，所有功能都会自动更新，极大简化维护工作**适合新手、个人用户或低配和无服务器部署
 
-### 🧭演示站点：[https://nav.zywe.de](https://nav.zywe.de)
+### 🧭演示站点：[https://dh.zywe.de](https://dh.zywe.de)
 ![835f57b512df219adae8a13c97e69cd4.png](https://i.miji.bid/2025/06/12/835f57b512df219adae8a13c97e69cd4.png)
 
 ## 🌈 主要特点
