@@ -96,27 +96,22 @@ import LogoName from '../components/LogoName.astro';
       }
     }, { passive: true });
     function setupCategoryLinks() {
-      console.log('设置分类导航点击事件');
       const categoryLinks = document.querySelectorAll('.sidebar-category-link');
       if (categoryLinks.length === 0) {
-        console.error('找不到分类链接');
         return;
       }
-      console.log(`找到 ${categoryLinks.length} 个分类链接`);
       categoryLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
           const href = link.getAttribute('href');
           if (!href) return;
           const id = href.replace('#', '');
-          console.log(`点击了分类: ${id}`);
           closeSidebar();
           setTimeout(() => {
             const targetSection = document.getElementById(id);
             if (targetSection) {
               const headerHeight = 70; 
               const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-              console.log(`滚动到位置: ${targetPosition}`);
               window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -125,7 +120,6 @@ import LogoName from '../components/LogoName.astro';
           }, 100); 
         });
       });
-      console.log('分类导航点击事件设置完成');
     }
     const toggleCategories = document.getElementById('toggle-categories');
     const categoriesContainer = document.getElementById('categories-container');

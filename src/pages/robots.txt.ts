@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 const SITE_URL = 'https://dh.zywe.de';
 const COMMON_RULES = {
   'Allow': ['/', '/icons/', '/images/'], 
-  'Disallow': ['/xw_assets/', '/node_modules/', '/*?*'], 
+  'Disallow': ['/xw_assets/', '/node_modules/', '/*?*','/~partytown/'], 
 };
 const RATE_LIMITED_CRAWLER_AGENTS = [
   'SemrushBot',
