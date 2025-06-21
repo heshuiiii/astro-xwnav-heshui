@@ -99,8 +99,9 @@ export const sites = [
       },
 ];
 /**
- * @param {string} query
- * @returns {Array}
+ * 搜索网站功能
+ * @param {string} query - 搜索关键词
+ * @returns {Array} - 符合条件的网站列表
  */
 export function searchSites(query) {
   if (!query) return sites;
@@ -108,18 +109,21 @@ export function searchSites(query) {
   return sites.filter(site => {
     return (
       site.title.toLowerCase().includes(lowerQuery) ||
-      site.description.toLowerCase().includes(lowerQuery) ||
+      site.url.toLowerCase().includes(lowerQuery) ||
       site.category.toLowerCase().includes(lowerQuery)
     );
   });
 }
 /**
- * @param {Array} sitesList
- * @returns {string}
+ * 将网站数据转换为HTML标记
+ * 允许直接在页面中嵌入HTML内容
+ * @param {Array} sitesList - 要呈现的网站列表
+ * @returns {string} - HTML标记字符串
  */
 export function sitesToHtml(sitesList) {
   if (!sitesList || !sitesList.length) return '<p>没有找到符合条件的网站</p>';
   const html = sitesList.map(site => {
+    // 转义HTML特殊字符以防止XSS攻击
     const safeTitle = escapeHtml(site.title);
     const safeDesc = escapeHtml(site.shortDesc || site.description);
     const safeUrl = escapeHtml(site.url);
@@ -141,8 +145,10 @@ export function sitesToHtml(sitesList) {
   return `<div class="sites-grid">${html}</div>`;
 }
 /**
- * @param {string} str
- * @returns {string}
+ * 安全转义HTML特殊字符
+ * 防止XSS攻击
+ * @param {string} str - 需要转义的字符串
+ * @returns {string} - 安全的HTML字符串
  */
 function escapeHtml(str) {
   if (!str) return '';
@@ -153,3 +159,4 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+

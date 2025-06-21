@@ -39,7 +39,7 @@ export default function SearchIsland() {
       const categoryName = categoryObj ? categoryObj.name.toLowerCase() : '';
       return (
         site.title.toLowerCase().includes(searchTerm) ||
-        site.description.toLowerCase().includes(searchTerm) ||
+        site.url.toLowerCase().includes(searchTerm) ||
         (site.shortDesc && site.shortDesc.toLowerCase().includes(searchTerm)) ||
         categoryName.includes(searchTerm)
       );
@@ -60,14 +60,25 @@ export default function SearchIsland() {
   };
   useEffect(() => {
     const searchToggle = document.getElementById('search-toggle');
+    const searchHint = document.getElementById('search-hint');
     const handleSearchToggleClick = (e) => {
       e.preventDefault(); 
       e.stopPropagation(); 
       openSearch();
     };
+    const handleSearchHintClick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openSearch();
+    };
     searchToggle?.addEventListener('click', handleSearchToggleClick, {passive: false});
     searchToggle?.addEventListener('touchend', handleSearchToggleClick, {passive: false});
+    searchHint?.addEventListener('click', handleSearchHintClick, {passive: false});
     const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearch();
+      }
       if (e.key === 'Escape') {
         closeSearch();
       }
@@ -76,12 +87,14 @@ export default function SearchIsland() {
     return () => {
       searchToggle?.removeEventListener('click', handleSearchToggleClick);
       searchToggle?.removeEventListener('touchend', handleSearchToggleClick);
+      searchHint?.removeEventListener('click', handleSearchHintClick);
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
   if (!isVisible) return null;
   return (
     <>
+      {/* 搜索框容器 */}
       <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 w-full max-w-5xl px-4 z-50">
         <div className="relative">
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-xl shadow-lg p-4 border border-gray-200 dark:border-gray-700">
@@ -97,6 +110,7 @@ export default function SearchIsland() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
+            {/* 搜索结果容器 */}
             <div ref={searchResultsRef} className="mt-2 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent hidden">
               {searchResults.length > 0 ? (
                 searchResults.map(result => (
@@ -140,6 +154,7 @@ export default function SearchIsland() {
           </div>
         </div>
       </div>
+      {/* 搜索背景遮罩 - 改进触摸事件处理 */}
       <div 
         className="fixed inset-0 bg-black bg-opacity-30 z-40"
         onClick={(e) => {
