@@ -14,33 +14,36 @@ const pageDescription = siteDescription;
   description={pageDescription}
 >
   <Header />
-  <div class="container mx-auto px-4 lg:flex lg:flex-nowrap lg:gap-6">
+  <div class="w-full lg:flex lg:flex-nowrap lg:gap-6">
     <Sidebar class="lg:block lg:sticky lg:top-0 lg:h-screen lg:flex-none lg:w-60 lg:overflow-y-auto lg:translate-x-0 lg:z-auto" />
-    <main class="pt-24 pb-8 lg:flex-1 lg:min-w-0">
-      <h1 class="sr-only">{pageTitle}</h1> 
+    <main class="pt-24 pb-8 lg:flex-1 lg:min-w-0 px-1">
+      {/* 添加 H1 标签 */}
+      <h1 class="sr-only">{pageTitle}</h1> {/* 使用 sr-only 使其在视觉上隐藏，但对屏幕阅读器和搜索引擎可见 */}
       <HNavbar />
       {categories.map(category => (
         <section class="mb-10" id={category.id}>
-          <h2 class="category-title text-2xl font-bold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 flex items-center">
-            <div class="w-8 h-8 mr-3 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img src={category.icon} alt={`${category.name} 分类图标`} class="w-5 h-5" width="20" height="20" />
+          <div class="max-w-7xl mx-auto">
+            <h2 class="category-title text-2xl font-bold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 flex items-center">
+              <div class="w-8 h-8 mr-3 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
+                <img src={category.icon} alt={`${category.name} 分类图标`} class="w-5 h-5" width="20" height="20" />
+              </div>
+              {category.name}
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-6">
+              {sites
+                .filter(site => site.category === category.id)
+                .map(site => (
+                  <Card
+                    title={site.title}
+                    description={site.description}
+                    shortDesc={site.shortDesc}
+                    url={site.url}
+                    icon={site.icon}
+                    category={site.category}
+                  />
+                ))
+              }
             </div>
-            {category.name}
-          </h2>
-          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-6">
-            {sites
-              .filter(site => site.category === category.id)
-              .map(site => (
-                <Card 
-                  title={site.title}
-                  description={site.description}
-                  shortDesc={site.shortDesc}
-                  url={site.url}
-                  icon={site.icon}
-                  category={site.category}
-                />
-              ))
-            }
           </div>
         </section>
       ))}
@@ -76,11 +79,11 @@ const pageDescription = siteDescription;
       const results: SearchResult[] = [];
       allCards.forEach(card => {
         const title = card.querySelector('h3')?.textContent?.toLowerCase() || '';
-        const description = card.querySelector('p')?.textContent?.toLowerCase() || '';
         const categoryId = card.getAttribute('data-category') || '';
         const url = card.getAttribute('data-url') || '#';
+        const urlLower = url.toLowerCase();
         const icon = card.querySelector('img')?.getAttribute('src') || '/icons/default.svg';
-        if (title.includes(query) || description.includes(query)) {
+        if (title.includes(query) || urlLower.includes(query)) {
           const categoryName = getCategoryNameById(categoryId);
           results.push({
             title: card.querySelector('h3')?.textContent || '',

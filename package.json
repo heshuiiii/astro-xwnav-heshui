@@ -2,7 +2,6 @@
   "name": "astro-xwnav",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.12.1",
   "description": "Astro navigation site by zywe",
   "keywords": [
     "astro",
@@ -19,9 +18,10 @@
     "sync": "astro sync"
   },
   "dependencies": {
+    "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.0",
-    "astro": "^5.8.1",
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.10.0",
     "astro-seo": "^0.8.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -29,8 +29,8 @@
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
     "@types/jsdom": "^21.1.7",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.21",
     "chalk": "^5.4.1",
     "cheerio": "^1.0.0",

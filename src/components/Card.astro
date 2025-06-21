@@ -34,7 +34,9 @@ const categoryIconPath = categoryObject ? categoryObject.icon : undefined;
   .dark .card {
     background-image: linear-gradient(135deg, #1e293b 0%, #1a2234 100%);
   }
+  /* 卡片悬停效果 */
   .card-wrapper:hover .card {
+    /* 悬停时的亮度增强和微微抬升 */
     background-image: linear-gradient(135deg, #ffffff 0%, #f9f9fa 100%);
     transform: translateY(-5px);
   }
@@ -48,7 +50,9 @@ const categoryIconPath = categoryObject ? categoryObject.icon : undefined;
       0 0 18px 6px rgba(0, 200, 200, 0.25), 
       0 0 22px 7px rgba(50, 205, 50, 0.1);
   }
+  /* 暗色模式悬停效果 */
   .dark .card-wrapper:hover .card {
+    /* 暗色模式悬停时的背景 */
     background-image: linear-gradient(135deg, #1e293b 0%, #162032 100%);
     transform: translateY(-5px);
   }
@@ -107,6 +111,7 @@ const categoryIconPath = categoryObject ? categoryObject.icon : undefined;
             class="icon w-6 h-6 sm:w-8 sm:h-8 min-w-[85%] min-h-[85%] max-w-[95%] max-h-[95%] object-contain transition-transform duration-300 group-hover:scale-110"
             loading="lazy"
             decoding="async"
+            fetchpriority="auto"
             onerror="this.onerror=null; this.src='/images/default.svg';"
             width="24"
             height="24"
@@ -148,6 +153,7 @@ const categoryIconPath = categoryObject ? categoryObject.icon : undefined;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  /* 卡片外层容器 - 用于定位和透视效果 */
   .card-wrapper {
     perspective: 1000px;
   }

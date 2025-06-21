@@ -31,11 +31,12 @@ const weatherIcons = {
   '未知': '🌤️'      
 };
 /**
- * @param {Object} data
- * @param {number} timestamp 
- * @param {string} userLocation
- * @param {Object} coordinates
- * @returns {Object}
+ * 处理 Open Meteo API 返回的天气数据
+ * @param {Object} data - API返回的原始天气数据
+ * @param {number} timestamp - 当前时间戳
+ * @param {string} userLocation - 用户地区信息
+ * @param {Object} coordinates - 经纬度坐标
+ * @returns {Object} 处理后的天气数据对象
  */
 function processWeatherData(data, timestamp, userLocation = '', coordinates = null) {
   console.log('处理天气数据');
@@ -159,6 +160,9 @@ export default function WeatherIsland() {
     coordinates: null
   });
   /**
+   * 获取用户位置信息和经纬度坐标
+   * 使用 api.myip.la/cn?json 获取位置和坐标（JSON格式）
+   * 如果失败，回退到 myip.ipip.net（纯文本格式）
    * @returns {Promise<{location: string, coordinates: {latitude: number, longitude: number} | null}>}
    */
   const fetchUserLocation = async () => {
@@ -277,8 +281,10 @@ export default function WeatherIsland() {
     }
   };
   /**
-   * @param {string} cityName
-   * @returns {Promise<{latitude: number, longitude: number} | null>}
+   * 将城市名称转换为经纬度坐标
+   * 主要用于 myip.ipip.net 返回的中文城市名称
+   * @param {string} cityName - 城市名称
+   * @returns {Promise<{latitude: number, longitude: number} | null>} - 经纬度坐标或null
    */
   const getCoordinates = async (cityName) => {
     if (!cityName) return null;
@@ -329,6 +335,10 @@ export default function WeatherIsland() {
   const isApiCallInProgress = useRef(false);
   const lastApiCallTime = useRef(0);
   const MIN_API_INTERVAL = 5000; 
+  /**
+   * 获取当地天气信息
+   * 使用 Open Meteo API - 添加防护机制防止无限调用
+   */
   const fetchWeather = async () => {
     if (isApiCallInProgress.current) {
       console.log('天气API调用正在进行中，跳过重复请求');
@@ -477,7 +487,7 @@ export default function WeatherIsland() {
     };
   }, []); 
   return (
-    <div className="mb-6 p-3 mx-auto w-[90%] bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-[0_2px_5px_rgba(0,0,0,0.03)]">
+    <div className="mb-6 p-4 bg-gray-50/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl border border-black/5 dark:border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.15)]">
       <div className="flex items-center justify-center">
         <span className="text-2xl mr-3">{weatherData.icon}</span>
         <div className="text-sm">

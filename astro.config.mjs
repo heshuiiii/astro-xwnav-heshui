@@ -2,10 +2,11 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import partytown from '@astrojs/partytown';
 import path from 'path';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-                 // 站点 URL：硬编码，与 robots.txt.ts 一致,记得修改
+                 //记得修改,和robots一样
 const SITE_URL = 'https://dh.zywe.de';
 const sitemapConfig = {
   filter: (page) => {
@@ -58,21 +59,52 @@ export default defineConfig({
           'react-jsx': ['react/jsx-runtime'],
         },
       },
+      plugins: [
+        {
+          name: 'safe-html-comment-remover',
+          generateBundle(options, bundle) {
+            if (process.env.NODE_ENV === 'production') {
+              Object.keys(bundle).forEach(fileName => {
+                if (fileName.endsWith('.html')) {
+                  const htmlAsset = bundle[fileName];
+                  if (htmlAsset.type === 'asset' && typeof htmlAsset.source === 'string') {
+                    let content = htmlAsset.source;
+                    content = content
+                      .replace(/^\s*<!--[\s\S]*?-->\s*$/gm, '')
+                      .replace(/^\s*<!--[\s\S]*?-->/gm, '')
+                      .replace(/<!--[\s\S]*?-->\s*$/gm, '')
+                      .replace(/<!--astro:end-->/g, '')
+                      .replace(/<!--\s*[^>\n\r]{1,80}\s*-->/g, '');
+                    htmlAsset.source = content;
+                  }
+                }
+              });
+            }
+          }
+        }
+      ]
     },
   },
   compressHTML: true,
   integrations: [
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: false, 
     }),
     react(),
-    sitemap(sitemapConfig)
+    sitemap(sitemapConfig),
+    partytown({
+      config: {
+        debug: false,
+        forward: ['dataLayer.push', 'gtag'],
+      }
+    })
   ],
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp', 
     },
-    format: ['webp'], 
+    responsiveStyles: true, 
+    layout: 'constrained', 
   },
   vite: {
     resolve: {
@@ -102,6 +134,9 @@ export default defineConfig({
         mangle: {
           safari10: true, 
         },
+        format: {
+          comments: false, 
+        },
       },
       assetsInlineLimit: 4096, 
       chunkSizeWarningLimit: 1000, 
@@ -111,7 +146,6 @@ export default defineConfig({
       devSourcemap: false, 
     },
   },
-// 调试用
   server: {
     host: '0.0.0.0', 
     port: 4321, 

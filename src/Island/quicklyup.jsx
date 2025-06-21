@@ -1,7 +1,15 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 const SCROLL_THRESHOLD = 400;      
-const AUTO_HIDE_DURATION = 3000;   
+const AUTO_HIDE_DURATION = 5000;   
 const SCROLL_STOP_DELAY = 500;     
+/**
+ * 快速返回顶部按钮组件
+ * 功能：
+ * 1. 页面向下滚动一定距离并停止滚动后出现，带有平滑动画。
+ * 2. 点击按钮平滑返回页面顶部。
+ * 3. 按钮出现后，若1.5秒内无滚动或点击操作，则自动隐藏。
+ * 4. 再次滚动时，按钮会暂时隐藏，停止滚动后重新判断是否显示。
+ */
 const QuicklyUpButton = () => {
   const [isVisible, setIsVisible] = useState(false); 
   const autoHideTimeoutRef = useRef(null); 
@@ -72,15 +80,15 @@ const QuicklyUpButton = () => {
       aria-label="快速返回顶部"
       type="button"
     >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        className="h-6 w-6" 
-        fill="none" 
-        viewBox="0 0 24 24" 
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={2.5} 
+        strokeWidth={2} 
       >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 14l4-4 4 4" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 16L12 10L18 16" />
       </svg>
     </button>
   );
