@@ -48,7 +48,6 @@ const {
   )}
 </a>
 <style>
-  /* ZYWE主标题渐变背景 */
   .logo-main-text {
     background-image: linear-gradient(90deg, #0467a1, #5ba2f3, #7c3aed, #4f46e5, #0467a1);
     background-size: 300% 100%;
@@ -59,20 +58,17 @@ const {
     text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
     letter-spacing: 0.05em;
   }
-  /* 容器hover效果 - 只对ZYWE进行动效 */
   .logo-text-container:hover .logo-main-text {
     background-position: 100% 0;
     transform: translateY(-2px) skew(-6deg);
     animation: letter-dance 1.5s ease;
   }
-  /* 字母跳跃动画 - 只对ZYWE生效 */
   @keyframes letter-dance {
     0%, 100% { transform: translateY(0) skew(-6deg); }
     25% { transform: translateY(-5px) skew(-5deg); }
     50% { transform: translateY(-2px) skew(-7deg); }
     75% { transform: translateY(-3px) skew(-4deg); }
   }
-  /* 网站小标题样式 */
   .subtitle-style {
     transform: perspective(800px) rotateX(3deg) rotateY(-5deg); 
     display: inline-block; 
